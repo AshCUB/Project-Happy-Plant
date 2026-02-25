@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <div class="PTW">
+        <h3>Press to Water</h3>
+      </div>
+      <div class="WB" onclick="activateButton(this)">
+        <img src="water_button.png" alt="watering button" style="width:50%">
+      </div>
+    </div>
+
+    <a class="home-link" href="main.html">home</a>
+  </div>
+
+  <script>
+    function activateButton(el) {
+      el.classList.add('active');
+      setTimeout(() => {
+        el.classList.remove('active');
+      }, 500);
+    }
+  </script>
+</body>
+</html>

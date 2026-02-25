@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <div class="content2">
+      <h3>Pump Water for</h3>
+
+      <div class="number-input" min="1" max="60" step="1" value="1">
+        <button type="button" class="btn" onclick="decrease()">
+          <span class="material-icons-outlined">remove</span>
+        </button>
+        <div class="value">
+          <span class="number">1</span>
+        </div>
+        <button type="button" class="btn" onclick="increase()">
+          <span class="material-icons-outlined">add</span>
+        </button>
+      </div>
+
+      <h3>Secs</h3>
+    </div>
+    <a class="home-link" href="main.html">home</a>
+  </div>
+
+  <script>
+    let input = document.querySelector(".number-input");
+    const min = input.getAttribute("min");
+    const max = input.getAttribute("max");
+    const step = Number(input.getAttribute("step") || 1);
+    var value = Number(input.getAttribute("value") || 0);
+    let number = document.querySelector(".number");
+    number.innerHTML = value;
+
+    function increase() {
+      if (max) {
+        if (value < max && value + step <= max) value += step;
+      } else {
+        value += step;
+      }
+      number.innerHTML = value;
+    }
+
+    function decrease() {
+      if (min) {
+        if (value > min && value - step >= min) value -= step;
+      } else {
+        value -= step;
+      }
+      number.innerHTML = value;
+    }
+  </script>
+</body>
+</html>

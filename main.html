@@ -1,9 +1,28 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
+  <div class="container">
+    <div class="content">
+    <div class="settings">
+    <img src="center_PHP.png" alt="project happy plant logo" style="width:105%">
+    <button class="button" onclick="toggleButton(this, 'water.html')">manually water</button>
+    <button class="button" onclick="toggleButton(this, 'schedule.html')">make watering schedule</button>
+    <button class="button" onclick="toggleButton(this, 'adjust.html')">adjust water pump</button>    </div>
+    </div>
+  </div>
 
-<h1>My First bitch</h1>
-<p>My first paragraph.</p>
 
+  <script>
+function toggleButton(clicked, url) {
+  document.querySelectorAll('.button').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  clicked.classList.add('active');
+  window.location.href = url;
+}
+  </script>
 </body>
 </html>

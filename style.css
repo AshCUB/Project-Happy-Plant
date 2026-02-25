@@ -1,0 +1,285 @@
+
+:root {
+  --grey: #282828;
+  --green: #668240;
+  --white: #edeae3;
+}
+
+@font-face {
+  font-family: Fields; /* set name */
+  src: url(FONNTS.COM-FIELDS-SEMI-BOLD.OTF); /* url of the font */
+}
+
+@font-face {
+  font-family: PTmono; /* set name */
+  src: url(PTM55F.ttf); /* url of the font */
+}
+
+
+h1 {
+      color: var(--green);
+  font-family: Fields;
+      padding: 0%;
+    margin-bottom: 3%;
+    margin-top: 0%;
+
+}
+
+.home-link {
+  position: absolute;
+  bottom: 5%;
+  color: var(--grey);
+  font-family: PTmono;
+  font-size: 1.3rem;
+  text-decoration: none;
+  background-color: var(--white);
+  border-style: solid;
+  border-width: 1.5pt;
+  border-color: var(--grey);
+  padding-left: 10pt;
+  padding-right: 10pt;
+}
+
+.home-link:hover {
+  color: var(--green);
+  border-color: var(--green);
+}
+
+h2 {
+      color: var(--gray);
+  font-family: Fields;
+      padding: 0%;
+    margin-bottom: 3%;
+    margin-top: 0%;
+        font-size: 1.8rem;
+
+}
+
+h3 {
+      color: var(--gray);
+  font-family: Fields;
+      padding: 0%;
+    margin-bottom: 0%;
+    margin-top: 0%;
+        font-size: 2.7rem;
+
+}
+
+
+body
+{
+    background-color: #edeae3;
+    padding: 0%;
+    margin: 0%;
+    color: var(--grey);
+    font-family: PTmono;
+
+}
+
+
+.button {
+  background-color: var(--white);
+  border-style: solid;
+  border-width: 2pt;
+  border-color: var(--green);
+  color: var(--grey);
+  padding: 7px 3px;
+  width: 350px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: PTmono;
+  margin-bottom: 2%;
+  white-space: nowrap;
+ 
+}
+
+.button:active {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+.button:hover {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+.button.active {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+.WB {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.WB.active {
+  transform: scale(1.1);
+}
+
+.WB:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.WB.active:hover {
+  transform: scale(1.1);
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    height: 100vh;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 350px;
+    align-items: center;
+    height: 30vh;
+    width: 40vh;
+}
+
+.content2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    margin-bottom: 20%;
+}
+
+.PTW {
+  margin-bottom: 10%;
+}
+
+.center {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.number-input {
+  width: 340px;
+  height: 120px;
+  color: var(--white);
+  background: var(--green);
+  border-radius: 10mm;
+  box-sizing: border-box;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: PTmono;
+  box-shadow: var(--white) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.btn {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--grey);
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  background: var(--white);
+}
+
+.btn span {
+  font-size: 55px;
+}
+
+.btn:active::before {
+  position: absolute;
+  content: "";
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.8;
+}
+
+.value {
+  flex-grow: 1;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.number {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 70px;
+  font-weight: 600;
+}
+
+/*
+.container {
+    display: flex;
+    flex-direction: column; 
+    flex-direction: row; 
+    flex-wrap: nowrap; -squish all items on same line;
+    flex-wrap: wrap; make items move to next line;
+     align-content: flex-end;
+     align-content: flex-start;
+     align-content: space-between;
+     align-content: space-around;
+     align-content: center;
+     align-content: baseline;
+     gap: 1 em make gaps between wrap items;
+     flex-grow: 1; make whatever wrap item(s) stretch to meet end of section.
+     the higher the flex-grow the higher the item will protize growing over other wrap items;
+     flex-shrink: 1; same thing but shrink;
+    flex: is all of these settings;
+    align-self: center override align items;
+
+    justify-content: flex-end; 
+    justify-content: flex-start; 
+    justify-content: space-between; no side margins;
+    justify-content: space-around; yes side margins not even;
+    justify-content: space-around; yes side margins yes even;
+        justify-content aligns content across MAIN axises (flex-direction:;);
+        align-items justifys content across the CROSS axis;
+        align-content is just for items in a wrap;
+    align-items: flex-end;
+    align-items: flex-start;
+    align-items: center;
+    align-items: baseline; -aligns by font baseline;
+
+
+
+}
+*/

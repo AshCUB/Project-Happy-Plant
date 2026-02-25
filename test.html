@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Number Input</title>
+    <!--Google Fonts and Icons-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
+      rel="stylesheet"
+      
+    />
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Foldit:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="center">
+      <div class="number-input" min="1" max="30" step="1" value="0">
+        <button type="button" class="btn" onclick="decrease()">
+          <span class="material-icons-outlined">remove</span>
+        </button>
+        
+        <div class="value">
+          <span class="number">1</span>
+
+        </div>
+        <button type="button" class="btn" onclick="increase()">
+          <span class="material-icons-outlined">add</span>
+        </button>
+      </div>
+    </div>
+    <script>
+      let input = document.querySelector(".number-input");
+      const min = input.getAttribute("min");
+      const max = input.getAttribute("max");
+      const step = Number(input.getAttribute("step") || 1);
+      var value = Number(input.getAttribute("value") || 0);
+      let number = document.querySelector(".number");
+      number.innerHTML = value;
+
+      function increase() {
+        if (max) {
+          if (value < max && value + step <= max) {
+            value += step;
+          }
+        } else {
+          value += step;
+        }
+        number.innerHTML = value;
+      }
+
+      function decrease() {
+        if (min) {
+          if (value > min && value - step >= min) {
+            value -= step;
+          }
+        } else {
+          value -= step;
+        }
+        number.innerHTML = value;
+      }
+    </script>
+  </body>
+</html>
