@@ -28,12 +28,18 @@
 
   <script>
     let input = document.querySelector(".number-input");
-    const min = input.getAttribute("min");
-    const max = input.getAttribute("max");
+    const min = Number(input.getAttribute("min"));
+    const max = Number(input.getAttribute("max"));
     const step = Number(input.getAttribute("step") || 1);
-    var value = Number(input.getAttribute("value") || 0);
     let number = document.querySelector(".number");
+
+    // Load saved value or fall back to default
+    var value = Number(localStorage.getItem("pumpSeconds") || input.getAttribute("value") || 1);
     number.innerHTML = value;
+
+    function saveValue() {
+      localStorage.setItem("pumpSeconds", value);
+    }
 
     function increase() {
       if (max) {
@@ -42,6 +48,7 @@
         value += step;
       }
       number.innerHTML = value;
+      saveValue();
     }
 
     function decrease() {
@@ -51,6 +58,7 @@
         value -= step;
       }
       number.innerHTML = value;
+      saveValue();
     }
   </script>
 </body>

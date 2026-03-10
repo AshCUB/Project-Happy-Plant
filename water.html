@@ -18,11 +18,14 @@
   </div>
 
   <script>
+    let secs = Number(localStorage.getItem("pumpSeconds") || 1);
+    document.getElementById("secsDisplay").innerHTML = secs;
+
     function activateButton(el) {
       el.classList.add('active');
       setTimeout(() => {
         el.classList.remove('active');
-      }, 500);
+      }, secs * 1000); // convert secs to milliseconds
     }
   </script>
 </body>
