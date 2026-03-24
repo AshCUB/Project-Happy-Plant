@@ -27,6 +27,7 @@
     <a class="home-link" href="main.html">home</a>
   </div>
 
+  <script src="config.js"></script>
   <script>
     let input = document.querySelector(".number-input");
     const min = Number(input.getAttribute("min"));
@@ -34,12 +35,12 @@
     const step = Number(input.getAttribute("step") || 1);
     let number = document.querySelector(".number");
 
-    // Load saved value or fall back to default
     var value = Number(localStorage.getItem("pumpSeconds") || input.getAttribute("value") || 1);
     number.innerHTML = value;
 
     function saveValue() {
       localStorage.setItem("pumpSeconds", value);
+      sendToESP32("/setDuration", { seconds: value });
     }
 
     function increase() {

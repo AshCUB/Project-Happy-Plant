@@ -18,15 +18,17 @@
     <a class="home-link" href="main.html">home</a>
   </div>
 
+  <script src="config.js"></script>
   <script>
     let secs = Number(localStorage.getItem("pumpSeconds") || 1);
-    document.getElementById("secsDisplay").innerHTML = secs;
 
     function activateButton(el) {
+      if (el.classList.contains('active')) return;
       el.classList.add('active');
+      sendToESP32("/water");
       setTimeout(() => {
         el.classList.remove('active');
-      }, secs * 1000); // convert secs to milliseconds
+      }, secs * 1000);
     }
   </script>
 </body>
