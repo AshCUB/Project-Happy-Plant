@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "happy_plant",
+			"path": "../../PlatformIO/Projects/happy_plant"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Project-Happy-Plant"
+	}
+}
